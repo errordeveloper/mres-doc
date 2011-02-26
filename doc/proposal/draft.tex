@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[twocolumn]{article}
 \pagenumbering{roman}
 
 \title{ System-on-Chip Approach to High Performance
@@ -18,29 +18,34 @@
  Systems-on-Chip, some integrate a greater deal of peripherals
  and most are low-coast and low-power; not to mention rapid
  improvements of various performance factors.
-  However it turns out that in audio application area there
- are fewer innovative dedvices and most of the vendors in the
- field apply proproetary technologies. On large, these are
+  However it appears that in audio application area there
+ are fewer innovative devices and most of the vendors in the
+ field apply proprietary technologies. On large, these are
  featuring an FPGA along with system control computer and
  separate peripheral controllers.
  % of more general kind.
 
+\end{abstract}
+
+\section{Introduction}
+
   Most of interesting SoC devices on the market, dominated by
  ARM cores, rather rearly include high performance FPU. Some
- icorporate GPUs. There are ways of using GPU for many types
+ incorporate GPUs. There are ways of using GPU for many types
  of signal processing applications, however not many had yet
- been found particularly versetile for audio. This may be an
+ been found particularly versatile for audio. This may be an
  interesting subject, though the purpose of this project is
- to bring yet another platrform, the primary deployment area
- of which has somewhat different nature of requirements.
-  For flexibility and other architectural reasons, porpular
+ to bring yet another platform, which had been primary deployed
+ in area with a different nature of requirements.
+  For flexibility and other architectural reasons, popular
  x86 family is not being considered. Although multiple other
  alternatives are to be studied and discussed.
 
-\end{abstract}
 
 %% that's including NetLogic MIPS64, ADI SHARC, TI OMAP,
 %% XMOS XS1, TILE64, ..
+
+\section{Aims \& Objectives}
 
   This project aims at developing a suitable hardware closely coupled
   with high-level software framework to facilitate research in the field
@@ -49,22 +54,62 @@
   standards.
   During the primary phase the main interest is to implement a platform
   using open-source software and hardware, with major orientation into
-  the second, utilsing OpenSPARC architecture.
+  the second, utilsing OpenSPARC architecture \cite{book:opensparc,
+  page:opensparc:docs,page:opensparc:S1}.
   OpenSPARC provides multi-core general-porpouse high performance host
   processor and by being open-source it can be greatly extended to provide 
   a configurable datapath pipeline with semi-fixed audio function units.
-  It also features network and storage iterface controllers, therefore in
-  later phase technologies such as Audio Video Bridging can be integrated
-  to build a distributed system with multiple nodes of different function
-  classes.
+  It also features network and storage interface controllers, therefore in
+  later phase technologies such as Audio Video Bridging \cite{page:avb,
+  wiki:avb} can be integrated to build a distributed system with multiple
+  nodes of different function classes. 
+  
+  Various proprietary technologies exist, which provide accelerated
+  audio processing. However, these are not accessible to researchers,
+  only end-user application software is provided by most vendors.
+
+%% Avid Pro-tools, Universal Audio ..
+
+  Dedicated DSP chips can be utilised, however the algorithm code
+  requires extensive modifications to run functions that DSP chip
+  provides. Most of open-source software that is available to audio
+  researchers \cite{wiki:pd,wiki:sc,wiki:cs} has been utilising host
+  CPU (largely x86) to carry out most of DSP routines. This is a
+  practically proven concept, though often when multichannel sound
+  is concerned, each channel requires to be processed by equaliser,
+  compressor and mixer. Another important aspect is floating-point
+  conversion. These components often become particularly intensive
+  in computation. It is not disagreed that popular GPU approach may
+  be applied \cite{paper:gpu1,paper:gpu2}, though the aim is to
+  employ a single-chip device.
+  The benefits of OpenSPARC are its free open-source license as well
+  as advanced 64-bit architecture with all necessary peripherals.
 
   Additional issues to be addressed in the project to certain extend,
   would be in the area of multi-threaded and multi-application host
-  audio processes. Hardware framework would provide facilities to
-  accellerate signal processing elements, which traditionally had
-  been handled by software.  
-  The configurable datapath with semi-fixed function blocks is to
-  represent ... 
+  audio processing. Hardware embedded in the CPU chip would provide
+  facilities to accelerate signal processing, which traditionally
+  had been handled by software or analogue outboard. The configurable
+  datapath with semi-fixed function blocks is modeling the analogue
+  mixing console with outboard dynamics and equalisers, as well as
+  patch-bays.
 
+  This should be achieved without creating a new instruction set,
+  i.e. only adding special function registers and a clock domain.
+  Certainly, the memory controller will need to be coupled with
+  a domain specific extension, providing an optimal software
+  interface. With this architecture it should be possible to 
+  incorporate such implementation into a different system,
+  for example, ARM-based or other.
+  However, in the duration of first phase of the project, minimum
+  complexity has to be taken care of. This implies that some of
+  more advanced DSP units may have to be implemented in the later
+  phase. The aim is to produce the basis for further work. 
+
+\section{Technical Requirements}
+
+  OpenSPARC is a large multi-core SoC, however it is possible
+  to build a smaller system \cite{site:oc:S1} on FPGA.
+  
 
 \end{document}
