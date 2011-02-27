@@ -1,0 +1,9 @@
+@conference{tsingos2009using,
+		title={Using Programmable Graphics Hardware for Acoustics and Audio Rendering},
+		author={Tsingos, Nicolas},
+		booktitle={Audio Engineering Society Convention 127},
+		month={10},
+		year={2009},
+		url={http://www.aes.org/e-lib/browse.cfm?elib=15045}
+		}
+

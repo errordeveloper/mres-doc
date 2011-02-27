@@ -1,10 +1,13 @@
 \documentclass[twocolumn]{article}
+\usepackage[utf8]{inputenc}
 \pagenumbering{roman}
 
 \title{ System-on-Chip Approach to High Performance
-	Audio Signal Processing and Transport }
+	Audio Signal Processing and Transport \\
+	\emph{\small{MRes System Engineering Project Proposal (Draft)}} }
 
 \author{ Ilya Dmitrichenko }
+
 
 \begin{document}
 
@@ -52,9 +55,9 @@
   of distributed audio processing and control, also capable to incorporate 
   real-time network streaming and data storage, applying latest technology
   standards.
-  During the primary phase the main interest is to implement a platform
+  During the primary phase main interest is to implement a platform
   using open-source software and hardware, with major orientation into
-  the second, utilsing OpenSPARC architecture \cite{book:opensparc,
+  the second, utilsing OpenSPARC architecture \cite{weaver2008opensparc,
   page:opensparc:docs,page:opensparc:S1}.
   OpenSPARC provides multi-core general-porpouse high performance host
   processor and by being open-source it can be greatly extended to provide 
@@ -72,16 +75,16 @@
 
   Dedicated DSP chips can be utilised, however the algorithm code
   requires extensive modifications to run functions that DSP chip
-  provides. Most of open-source software that is available to audio
+  provides. Popular open-source software that is available to audio
   researchers \cite{wiki:pd,wiki:sc,wiki:cs} has been utilising host
   CPU (largely x86) to carry out most of DSP routines. This is a
   practically proven concept, though often when multichannel sound
-  is concerned, each channel requires to be processed by equaliser,
-  compressor and mixer. Another important aspect is floating-point
-  conversion. These components often become particularly intensive
-  in computation. It is not disagreed that popular GPU approach may
-  be applied \cite{paper:gpu1,paper:gpu2}, though the aim is to
-  employ a single-chip device.
+  is concerned, each channel idealy needs to be processed by equaliser
+  and compressor before it is mixed. Another important aspect is
+  floating-point conversion. These components often become particularly
+  intensive in computation. It is not disagreed that GPU approach may
+  be applied \cite{moore2009the,savioja2010real,tsingos2009using},
+  though the aim is to build a single-chip device.
   The benefits of OpenSPARC are its free open-source license as well
   as advanced 64-bit architecture with all necessary peripherals.
 
@@ -100,16 +103,23 @@
   a domain specific extension, providing an optimal software
   interface. With this architecture it should be possible to 
   incorporate such implementation into a different system,
-  for example, ARM-based or other.
+  such as less expensive ARM-based solution or other.
   However, in the duration of first phase of the project, minimum
   complexity has to be taken care of. This implies that some of
   more advanced DSP units may have to be implemented in the later
   phase. The aim is to produce the basis for further work. 
+  
+  The purpose is dual, it is a very challanging research project
+  as well as potential building block for commercial audio products.
 
 \section{Technical Requirements}
 
   OpenSPARC is a large multi-core SoC, however it is possible
   to build a smaller system \cite{site:oc:S1} on FPGA.
   
+
+\bibliographystyle{plain}
+
+\bibliography{../bibliography/books,../bibliography/papers}
 
 \end{document}

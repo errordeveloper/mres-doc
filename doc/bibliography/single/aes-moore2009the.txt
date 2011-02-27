@@ -1,0 +1,9 @@
+@conference{moore2009the,
+		title={The Potential of High Performance Computing in Audio Engineering},
+		author={Moore, David; Wakefield, Jonathan},
+		booktitle={Audio Engineering Society Convention 126},
+		month={5},
+		year={2009},
+		url={http://www.aes.org/e-lib/browse.cfm?elib=14928}
+		}
+

@@ -1,0 +1,9 @@
+@conference{savioja2010real,
+		title={Real-Time Additive Synthesis with One Million Sinusoids Using a GPU},
+		author={Savioja, Lauri; Välimäki, Vesa; Smith III, Julius O.},
+		booktitle={Audio Engineering Society Convention 128},
+		month={5},
+		year={2010},
+		url={http://www.aes.org/e-lib/browse.cfm?elib=15259}
+		}
+

@@ -1,0 +1,9 @@
+@conference{angus2010a,
+		title={A GPGPU Approach to Improved Acoustic Finite Difference Time Domain Calculations},
+		author={Angus, Jamie A. S.; Caunce, Andrew},
+		booktitle={Audio Engineering Society Convention 128},
+		month={5},
+		year={2010},
+		url={http://www.aes.org/e-lib/browse.cfm?elib=15260}
+		}
+
