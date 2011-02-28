@@ -1,5 +1,6 @@
 \documentclass[twocolumn]{article}
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
 \pagenumbering{roman}
 
 \title{ System-on-Chip Approach to High Performance
@@ -33,13 +34,13 @@
 \section{Introduction}
 
   Most of interesting SoC devices on the market, dominated by
- ARM cores, rather rearly include high performance FPU. Some
+ ARM cores, rather rarely include high performance FPU. Some
  incorporate GPUs. There are ways of using GPU for many types
  of signal processing applications, however not many had yet
  been found particularly versatile for audio. This may be an
  interesting subject, though the purpose of this project is
- to bring yet another platform, which had been primary deployed
- in area with a different nature of requirements.
+ to bring yet another platform, which had been primarily
+ deployed in area with a different nature of requirements.
   For flexibility and other architectural reasons, popular
  x86 family is not being considered. Although multiple other
  alternatives are to be studied and discussed.
@@ -57,15 +58,15 @@
   standards.
   During the primary phase main interest is to implement a platform
   using open-source software and hardware, with major orientation into
-  the second, utilsing OpenSPARC architecture \cite{weaver2008opensparc,
-  page:opensparc:docs,page:opensparc:S1}.
-  OpenSPARC provides multi-core general-porpouse high performance host
+  the second, utilising OpenSPARC architecture \cite{weaver2008opensparc,
+  page:opensparc:docs}.
+  OpenSPARC provides multi-core general-purpose high performance host
   processor and by being open-source it can be greatly extended to provide 
   a configurable datapath pipeline with semi-fixed audio function units.
   It also features network and storage interface controllers, therefore in
-  later phase technologies such as Audio Video Bridging \cite{page:avb,
-  wiki:avb} can be integrated to build a distributed system with multiple
-  nodes of different function classes. 
+  later phase technologies such as Audio Video Bridging \cite{page:avb:home,
+  paper:avb:pro, paper:avb:intro} can be integrated to build a distributed
+  system with multiple nodes of different function classes. 
   
   Various proprietary technologies exist, which provide accelerated
   audio processing. However, these are not accessible to researchers,
@@ -79,14 +80,15 @@
   researchers \cite{wiki:pd,wiki:sc,wiki:cs} has been utilising host
   CPU (largely x86) to carry out most of DSP routines. This is a
   practically proven concept, though often when multichannel sound
-  is concerned, each channel idealy needs to be processed by equaliser
+  is concerned, it is desired that each channel is processed by equaliser
   and compressor before it is mixed. Another important aspect is
   floating-point conversion. These components often become particularly
   intensive in computation. It is not disagreed that GPU approach may
   be applied \cite{moore2009the,savioja2010real,tsingos2009using},
   though the aim is to build a single-chip device.
   The benefits of OpenSPARC are its free open-source license as well
-  as advanced 64-bit architecture with all necessary peripherals.
+  as advanced 64-bit architecture \cite{weaver1994sparc} with all
+  necessary peripherals.
 
   Additional issues to be addressed in the project to certain extend,
   would be in the area of multi-threaded and multi-application host
@@ -109,17 +111,18 @@
   more advanced DSP units may have to be implemented in the later
   phase. The aim is to produce the basis for further work. 
   
-  The purpose is dual, it is a very challanging research project
-  as well as potential building block for commercial audio products.
+  The purpose is dual, it is a very challenging research project
+  as well as potential building block for commercial audio systems.
 
 \section{Technical Requirements}
 
   OpenSPARC is a large multi-core SoC, however it is possible
-  to build a smaller system \cite{site:oc:S1} on FPGA.
+  to build a smaller system \cite{page:opensparc:fpga} on FPGA,
+  optimised for the size of available target device.
   
 
 \bibliographystyle{plain}
 
-\bibliography{../bibliography/books,../bibliography/papers}
+\bibliography{../bibliography/books,../bibliography/papers,../bibliography/links}
 
 \end{document}
